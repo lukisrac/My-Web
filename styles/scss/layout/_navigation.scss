@@ -1,11 +1,12 @@
 .navbar {
-  padding: 1rem 0;
+  padding: 1.3rem 0;
   width: 100%;
   z-index: 9;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  transition: all 0.5s ease;
 
   &-brand {
     color: #fff;
@@ -49,6 +50,28 @@
       &:hover {
         color: #fff;
         background: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+
+  &.sticky {
+    background: #fff;
+    padding: 0.9rem 0;
+    box-shadow: 0 10px 33px rgba(0, 0, 0, 0.1);
+
+    .navbar-brand,
+    .navbar__link:not(.active) {
+      color: $default-font-color;
+    }
+    .navbar__link:hover {
+      color: $primary;
+    }
+    .social-icons .navbar__link {
+      border-color: $default-font-color;
+
+      &:hover {
+        color: #fff;
         border-color: $primary;
       }
     }

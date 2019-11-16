@@ -13,6 +13,7 @@ section.home {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     .heading {
       font-size: 3rem;
@@ -23,5 +24,37 @@ section.home {
       font-size: 1.2rem;
       margin: 1rem 0;
     }
+    .mouse {
+      display: inline-block;
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2rem;
+      border: 2px solid $light-grey;
+      border-radius: 50rem;
+      width: 1.7rem;
+      height: 2.5rem;
+
+      &__wheel {
+        display: block;
+        position: relative;
+        top: 1rem;
+        width: 2px;
+        height: 0.6rem;
+        margin: 0 auto;
+        background: $light-grey;
+        animation: bounce 1s infinite alternate;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(9px);
   }
 }
