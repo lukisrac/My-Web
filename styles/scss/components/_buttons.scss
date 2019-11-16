@@ -1,0 +1,26 @@
+.btn {
+  text-align: center;
+  border-radius: 0.25rem;
+  outline: none;
+  padding: 0.7rem 1.3rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  transition: all 0.3s;
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+
+  &-hire {
+    background: $primary;
+    margin-top: 0.5rem;
+
+    &:hover {
+      background: $default-font-color;
+    }
+    i {
+      margin-left: 0.2rem;
+    }
+  }
+}
