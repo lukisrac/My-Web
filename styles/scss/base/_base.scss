@@ -12,11 +12,22 @@ body {
   color: $default-font-color;
 }
 .container {
-  max-width: 1140px;
   width: 100%;
   padding: 0 1rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: lighten($primary, 5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
 }
