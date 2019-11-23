@@ -30,6 +30,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "smooth-scroll": "^16.1.0",
     "webpack-dev-server": "^3.9.0"
   }
 }
