@@ -15,6 +15,16 @@
           box-sizing: border-box;
 }
 
+::-moz-selection {
+  background-color: #f18da0;
+  color: #000;
+}
+
+::selection {
+  background-color: #f18da0;
+  color: #000;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
