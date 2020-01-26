@@ -177,6 +177,110 @@ body {
   color: #e63254;
 }
 
+.projects__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+.project__item {
+  max-width: 33.33%;
+  width: 33.33%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.33%;
+          flex: 0 0 33.33%;
+  padding: 0 1rem 1rem;
+}
+
+.project__box {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+}
+
+.project__image {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.project__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all 0.9s ease;
+  transition: all 0.9s ease;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  background-color: rgba(27, 27, 27, 0.8);
+  z-index: 1;
+}
+
+.project__icon {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.project__icon svg {
+  color: #fff;
+  font-size: 30px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.project__icon svg:hover {
+  color: #e63254;
+  cursor: pointer;
+}
+
+.project__content {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+
+.project__title {
+  font-size: 0.94rem;
+  color: #f8f9fa;
+  letter-spacing: 0.03rem;
+  text-transform: uppercase;
+}
+
+.project__title:hover {
+  color: #e63254;
+}
+
+.project__category {
+  font-size: 90%;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.project__box:hover .project__image {
+  -webkit-transform: scale(1.5) rotate(5deg);
+          transform: scale(1.5) rotate(5deg);
+}
+
+.project__box:hover .project__overlay {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .skill {
   margin-top: 2rem;
 }
@@ -1011,7 +1115,7 @@ section.projects .projects__filter-category {
   transition: all 0.5s ease;
 }
 
-section.projects .projects__filter-category.active, section.projects .projects__filter-category:hover {
+section.projects .projects__filter-item:hover .projects__filter-category, section.projects .projects__filter-item.active .projects__filter-category {
   color: #fff;
   background-color: #e63254;
 }

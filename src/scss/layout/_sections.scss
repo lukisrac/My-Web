@@ -58,9 +58,10 @@ section.projects {
       padding: 0 1rem;
       margin-bottom: 0.5rem;
       transition: all 0.5s ease;
-
-      &.active,
-      &:hover {
+    }
+    &-item:hover,
+    &-item.active {
+      .projects__filter-category {
         color: #fff;
         background-color: $primary;
       }
