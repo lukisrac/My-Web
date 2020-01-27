@@ -19,25 +19,27 @@ const backToTop = new BackToTop(link);
 backToTop.init();
 
 // isotope
-const grid = document.querySelector('.projects__container');
-const iso = new Isotope(grid, {
-  itemSelector: '.project__item',
-  layoutMode: 'masonry',
-});
+window.addEventListener('load', () => {
+  const grid = document.querySelector('.projects__container');
+  const iso = new Isotope(grid, {
+    itemSelector: '.project__item',
+    layoutMode: 'masonry',
+  });
 
-const filters = document.querySelectorAll('.projects__filter-item');
-const buttons = document.querySelectorAll('.projects__filter-category');
+  const filters = document.querySelectorAll('.projects__filter-item');
+  const buttons = document.querySelectorAll('.projects__filter-category');
 
-buttons.forEach(button => {
-  button.addEventListener('click', e => {
-    const thisItem = e.target.parentElement;
-    filters.forEach(filter => {
-      filter.classList.remove('active');
-      if (thisItem === filter) {
-        thisItem.classList.toggle('active');
-      }
+  buttons.forEach(button => {
+    button.addEventListener('click', e => {
+      const thisItem = e.target.parentElement;
+      filters.forEach(filter => {
+        filter.classList.remove('active');
+        if (thisItem === filter) {
+          thisItem.classList.toggle('active');
+        }
+      });
+      let filterValue = e.target.getAttribute('data-filter');
+      iso.arrange({ filter: filterValue });
     });
-    let filterValue = e.target.getAttribute('data-filter');
-    iso.arrange({ filter: filterValue });
   });
 });
