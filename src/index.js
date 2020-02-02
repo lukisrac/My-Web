@@ -43,3 +43,16 @@ window.addEventListener('load', () => {
     });
   });
 });
+
+const moreBtn = document.querySelector('.btn-more');
+
+moreBtn.addEventListener('click', () => {
+  document.querySelector('.projects__extended').style.display = 'block';
+  const grid = document.querySelector('.projects__container');
+  const iso = new Isotope(grid, {
+    itemSelector: '.project__item',
+    layoutMode: 'masonry',
+  });
+
+  moreBtn.remove();
+});
