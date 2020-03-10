@@ -1,4 +1,4 @@
-export class Modal {
+export default class Modal {
   constructor() {
     this.modalOverlay = document.querySelector('.modal__overlay');
     this.modalContainer = document.querySelector('.modal__container');
@@ -9,6 +9,7 @@ export class Modal {
     this.modalContent = this.modalContainer.querySelector('.modal');
     this.modalImage = this.modalContent.querySelector('.modal__picture');
     this.modalTitle = this.modalContent.querySelector('.modal__title');
+    this.modalCategory = this.modalContent.querySelector('.project__detail');
   }
 
   openModal() {
@@ -17,6 +18,8 @@ export class Modal {
         document.querySelector('body').style.overflow = 'hidden';
         this.modalOverlay.classList.add('active');
         this.modalContainer.classList.add('active');
+        let projectContainer =
+          e.target.parentElement.parentElement.parentElement.parentElement;
         let projectImage = e.target.parentElement.parentElement.parentElement
           .querySelector('.project__image')
           .getAttribute('src');
@@ -25,7 +28,21 @@ export class Modal {
         ).textContent;
         this.modalTitle.textContent = projectTitle;
         this.modalImage.innerHTML = `<img src="${projectImage}" />`;
-        console.log(projectImage);
+        if (projectContainer.classList.contains('web')) {
+          this.modalCategory.innerHTML = `
+            <li class="project__detail-item">
+              <span class="project__detail-label">Kategorie:</span>
+              Kódování webu
+            </li>
+          `;
+        } else {
+          this.modalCategory.innerHTML = `
+            <li class="project__detail-item">
+              <span class="project__detail-label">Kategorie:</span>
+              Vývoj aplikace
+            </li>
+          `;
+        }
       });
     });
   }

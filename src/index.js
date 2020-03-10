@@ -1,6 +1,6 @@
 import SmoothScroll from 'smooth-scroll';
 import { StickyNavigation, BackToTop } from './ui/scroll.js';
-import { Modal } from './ui/modal';
+import Modal from './ui/modal';
 
 // Activate smooth scrolling
 const scroll = new SmoothScroll('a[href*="#"]', {
