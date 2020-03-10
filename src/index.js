@@ -1,5 +1,6 @@
 import SmoothScroll from 'smooth-scroll';
 import { StickyNavigation, BackToTop } from './ui/scroll.js';
+import { Modal } from './ui/modal';
 
 // Activate smooth scrolling
 const scroll = new SmoothScroll('a[href*="#"]', {
@@ -17,6 +18,10 @@ const link = document.querySelector('.back-to-top');
 
 const backToTop = new BackToTop(link);
 backToTop.init();
+
+// Project modal
+const projectModal = new Modal();
+projectModal.init();
 
 // isotope
 window.addEventListener('load', () => {

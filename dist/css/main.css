@@ -244,9 +244,16 @@ body {
 .modal__picture {
   max-width: 100%;
   width: 100%;
-  height: 707px;
+  height: 600px;
   background: #eee;
   margin-bottom: 1rem;
+}
+
+.modal__picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .modal__title {
@@ -344,16 +351,38 @@ body {
   text-align: center;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  /* svg {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 auto;
+    display: inline-block;
+
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+    }
+  } */
 }
 
-.project__icon svg {
+.project__icon a {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 28px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.project__icon i {
   color: #fff;
   font-size: 30px;
   margin: 0 auto;
   display: inline-block;
 }
 
-.project__icon svg:hover {
+.project__icon:hover i {
   color: #e63254;
   cursor: pointer;
 }
