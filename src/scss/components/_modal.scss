@@ -101,3 +101,18 @@
     font-weight: 700;
   }
 }
+.visit-project {
+  background: $primary;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  transition: all 0.3s;
+
+  &:hover {
+    background: $default-font-color;
+  }
+}

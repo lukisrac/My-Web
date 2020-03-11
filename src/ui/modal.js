@@ -10,6 +10,7 @@ export default class Modal {
     this.modalImage = this.modalContent.querySelector('.modal__picture');
     this.modalTitle = this.modalContent.querySelector('.modal__title');
     this.modalCategory = this.modalContent.querySelector('.project__detail');
+    this.modalLink = this.modalContent.querySelector('.visit-project');
   }
 
   openModal() {
@@ -26,6 +27,9 @@ export default class Modal {
         let projectTitle = e.target.parentElement.parentElement.querySelector(
           '.project__title'
         ).textContent;
+        let projectLink = e.target.parentElement.parentElement.parentElement
+          .querySelector('a')
+          .getAttribute('href');
         this.modalTitle.textContent = projectTitle;
         this.modalImage.innerHTML = `<img src="${projectImage}" />`;
         if (projectContainer.classList.contains('web')) {
@@ -43,15 +47,21 @@ export default class Modal {
             </li>
           `;
         }
+        this.modalLink.setAttribute('href', projectLink);
       });
     });
   }
 
   closeModal() {
-    this.modalCloseBtn.addEventListener('click', () => {
-      document.querySelector('body').style.overflow = 'auto';
-      this.modalOverlay.classList.remove('active');
-      this.modalContainer.classList.remove('active');
+    this.modalContainer.addEventListener('click', e => {
+      if (
+        e.target.classList.contains('modal__wrapper') ||
+        e.target.classList.contains('modal__close')
+      ) {
+        document.querySelector('body').style.overflow = 'auto';
+        this.modalOverlay.classList.remove('active');
+        this.modalContainer.classList.remove('active');
+      }
     });
   }
 

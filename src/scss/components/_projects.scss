@@ -9,11 +9,21 @@
   flex: 0 0 33.33%;
   //height: 332px;
   padding: 0 1rem 1rem;
+  @include media-breakpoint-down(xs) {
+    max-width: 100%;
+    width: 100%;
+    flex: 0 0 100%;
+  }
 }
 .project__box {
   position: relative;
   overflow: hidden;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+}
+.project__link {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .project__image {
   max-width: 100%;

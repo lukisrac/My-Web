@@ -5,10 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-::selection {
-  background-color: lighten($primary, 20);
-  color: #000;
-}
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -22,16 +18,4 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-::-webkit-scrollbar {
-  width: 0.8rem;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: lighten($primary, 5);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: $primary;
 }
