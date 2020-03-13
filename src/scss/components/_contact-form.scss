@@ -59,6 +59,9 @@
 .contact__content {
   background: #fff;
   padding: 4rem !important;
+  @include media-breakpoint-down(xs) {
+    padding: 3rem !important;
+  }
 
   h3 {
     font-size: 1.3rem;
@@ -72,6 +75,9 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 4rem !important;
+  @include media-breakpoint-down(xs) {
+    padding: 3rem !important;
+  }
 
   h3 {
     color: #fff;

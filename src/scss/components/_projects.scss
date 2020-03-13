@@ -9,6 +9,11 @@
   flex: 0 0 33.33%;
   //height: 332px;
   padding: 0 1rem 1rem;
+  @include media-breakpoint-down(md) {
+    max-width: 50%;
+    width: 50%;
+    flex: 0 0 50%;
+  }
   @include media-breakpoint-down(xs) {
     max-width: 100%;
     width: 100%;

@@ -40,6 +40,9 @@ section.about {
 section.projects {
   .filter-row {
     width: 100%;
+    @include media-breakpoint-down(md) {
+      margin: 0 0 1rem;
+    }
   }
   .projects__filter {
     list-style: none;

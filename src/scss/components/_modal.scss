@@ -51,6 +51,12 @@
   max-width: 767px;
   margin: 2rem auto;
   background: #fff;
+  @include media-breakpoint-down(md) {
+    max-width: 700px;
+  }
+  @include media-breakpoint-down(xs) {
+    max-width: calc(100% - 1rem);
+  }
 
   &__picture {
     max-width: 100%;
@@ -58,6 +64,9 @@
     height: 600px;
     background: #eee;
     margin-bottom: 1rem;
+    @include media-breakpoint-down(xs) {
+      height: 495px;
+    }
 
     img {
       width: 100%;
