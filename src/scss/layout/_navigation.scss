@@ -24,12 +24,17 @@
     }
   }
   &-collapse {
-    display: none;
+    //display: none;
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
     @include media-breakpoint-up(lg) {
       display: flex;
+      overflow: visible;
+      max-height: unset;
     }
   }
   &-toggler {
@@ -107,6 +112,32 @@
         color: #fff;
         border-color: $primary;
       }
+    }
+  }
+}
+.navbar-collapse.active {
+  //display: block;
+  flex-basis: 100%;
+  padding-top: 0.5rem;
+  max-height: unset;
+
+  .navbar__list {
+    flex-direction: column;
+  }
+  .navbar__link {
+    color: $default-font-color;
+    padding: 0.5rem;
+    display: block;
+    line-height: 24px;
+  }
+  .social-icons {
+    flex-direction: row;
+    margin: 0.5rem;
+
+    .navbar__link {
+      display: flex;
+      border-color: $default-font-color;
+      padding: 0;
     }
   }
 }

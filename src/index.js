@@ -13,6 +13,9 @@ const nav = document.querySelector('.navbar');
 const stickyNav = new StickyNavigation(nav);
 stickyNav.sticky();
 
+// Navbar toggler on smaller screnn sizes
+stickyNav.toggle();
+
 // Showing/hiding back to top button
 const link = document.querySelector('.back-to-top');
 

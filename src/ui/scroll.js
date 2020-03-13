@@ -13,6 +13,14 @@ export class StickyNavigation {
       }
     });
   }
+  toggle() {
+    const navbarTrigger = this.container.querySelector('.navbar-toggler');
+    const navbarCollapse = this.container.querySelector('.navbar-collapse');
+
+    navbarTrigger.addEventListener('click', () => {
+      navbarCollapse.classList.toggle('active');
+    });
+  }
 }
 
 export class BackToTop {
