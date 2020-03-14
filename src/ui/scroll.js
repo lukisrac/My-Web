@@ -21,6 +21,10 @@ export class StickyNavigation {
       navbarCollapse.classList.toggle('active');
     });
   }
+  init() {
+    this.sticky();
+    this.toggle();
+  }
 }
 
 export class BackToTop {

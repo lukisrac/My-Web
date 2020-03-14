@@ -1,4 +1,5 @@
 import SmoothScroll from 'smooth-scroll';
+import IsotopeComponent from './ui/isotope';
 import { StickyNavigation, BackToTop } from './ui/scroll.js';
 import Modal from './ui/modal';
 
@@ -7,14 +8,11 @@ const scroll = new SmoothScroll('a[href*="#"]', {
   updateURL: false,
 });
 
-// Add active class to nav on scroll
+// Add active class to nav on scroll a activate toggler on smaller screens
 const nav = document.querySelector('.navbar');
 
 const stickyNav = new StickyNavigation(nav);
-stickyNav.sticky();
-
-// Navbar toggler on smaller screnn sizes
-stickyNav.toggle();
+stickyNav.init();
 
 // Showing/hiding back to top button
 const link = document.querySelector('.back-to-top');
@@ -22,45 +20,23 @@ const link = document.querySelector('.back-to-top');
 const backToTop = new BackToTop(link);
 backToTop.init();
 
+// Isotope layout
+const grid = document.querySelector('.projects__container');
+
+const isotope = new IsotopeComponent(grid);
+isotope.init();
+
 // Project modal
 const projectModal = new Modal();
 projectModal.init();
 
-// isotope
-window.addEventListener('load', () => {
-  const grid = document.querySelector('.projects__container');
-  const iso = new Isotope(grid, {
-    itemSelector: '.project__item',
-    layoutMode: 'masonry',
-  });
+// Current year in copyright footer
+const getCurrentYear = () => {
+  const now = new Date();
+  const currentYear = now.getFullYear();
 
-  const filters = document.querySelectorAll('.projects__filter-item');
-  const buttons = document.querySelectorAll('.projects__filter-category');
+  const copyrightYear = document.querySelector('.current-year');
+  copyrightYear.textContent = currentYear;
+};
 
-  buttons.forEach(button => {
-    button.addEventListener('click', e => {
-      const thisItem = e.target.parentElement;
-      filters.forEach(filter => {
-        filter.classList.remove('active');
-        if (thisItem === filter) {
-          thisItem.classList.toggle('active');
-        }
-      });
-      let filterValue = e.target.getAttribute('data-filter');
-      iso.arrange({ filter: filterValue });
-    });
-  });
-});
-
-const moreBtn = document.querySelector('.btn-more');
-
-moreBtn.addEventListener('click', () => {
-  document.querySelector('.projects__extended').style.display = 'block';
-  const grid = document.querySelector('.projects__container');
-  const iso = new Isotope(grid, {
-    itemSelector: '.project__item',
-    layoutMode: 'masonry',
-  });
-
-  moreBtn.remove();
-});
+getCurrentYear();
