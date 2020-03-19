@@ -676,7 +676,7 @@
             <div class="contact__wrapper">
               <div class="contact__content col-lg-7">
                 <h3>Napište mi své přání</h3>
-                <form method="POST" action="contact.php" id="contact-form">
+                <form method="POST" id="contact-form">
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="name">Vaše jméno</label>
@@ -704,6 +704,8 @@
                         type="tel"
                         id="phone"
                         name="phone"
+                        minlength="9"
+                        maxlength="9"
                         class="form-control"
                       />
                     </div>
@@ -715,8 +717,8 @@
                         class="form-control"
                       >
                         <option selected>Vyberte...</option>
-                        <option value="1">Web</option>
-                        <option value="2">Aplikace</option>
+                        <option value="Web">Web</option>
+                        <option value="Aplikace">Aplikace</option>
                       </select>
                     </div>
                   </div>

@@ -1,7 +1,8 @@
 import SmoothScroll from 'smooth-scroll';
-import IsotopeComponent from './ui/isotope';
-import { StickyNavigation, BackToTop } from './ui/scroll.js';
-import Modal from './ui/modal';
+import IsotopeComponent from './modules/isotope';
+import { StickyNavigation, BackToTop } from './modules/scroll.js';
+import Modal from './modules/modal';
+import { getCurrentYear } from './modules/currentYear';
 
 // Activate smooth scrolling
 const scroll = new SmoothScroll('a[href*="#"]', {
@@ -31,12 +32,78 @@ const projectModal = new Modal();
 projectModal.init();
 
 // Current year in copyright footer
-const getCurrentYear = () => {
-  const now = new Date();
-  const currentYear = now.getFullYear();
-
-  const copyrightYear = document.querySelector('.current-year');
-  copyrightYear.textContent = currentYear;
-};
-
 getCurrentYear();
+
+// Form validation and submition
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', e => {
+  e.preventDefault();
+
+  const formData = new FormData(contactForm);
+  const name = formData.get('name').trim();
+  const email = formData.get('email').trim();
+  const phone = parseInt(formData.get('phone').trim());
+  const serviceType = formData.get('service-type');
+  const message = formData.get('message').trim();
+
+  let isValidName,
+    isValidEmail,
+    isValidPhone,
+    isValidServiceType,
+    isValidMessage;
+
+  if (name === '') {
+    console.log('Zadejte prosím vaše jméno');
+  } else {
+    isValidName = true;
+  }
+
+  if (email === '') {
+    console.log('Zadejte prosím váš email');
+  } else {
+    isValidEmail = true;
+  }
+
+  if (
+    phone.toString().length < 9 ||
+    phone.toString().length > 9 ||
+    isNaN(phone)
+  ) {
+    console.log('Zadejte prosím správný formát čísla(123456789)');
+  } else {
+    isValidPhone = true;
+  }
+
+  if (serviceType === 'Vyberte...') {
+    console.log('Vyberte prosím typ služby');
+  } else {
+    isValidServiceType = true;
+  }
+
+  if (message === '') {
+    console.log('Zadejte prosím vaši zprávu');
+  } else {
+    isValidMessage = true;
+  }
+
+  if (
+    isValidName &&
+    isValidEmail &&
+    isValidPhone &&
+    isValidServiceType &&
+    isValidMessage
+  ) {
+    console.log(name, email, phone, serviceType, message);
+    fetch('../contact.php', {
+      method: 'POST',
+      body: formData,
+    }).then(response => {
+      if (response.ok) {
+        contactForm.reset();
+      } else {
+        throw new Error('Něco se pokazilo!');
+      }
+    });
+  }
+});
