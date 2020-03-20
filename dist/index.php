@@ -686,6 +686,7 @@
                         name="name"
                         class="form-control"
                       />
+                      <span class="form-error">Vyplňte prosím vaše jméno</span>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="email">Emailová adresa</label>
@@ -695,6 +696,7 @@
                         name="email"
                         class="form-control"
                       />
+                      <span class="form-error">Vyplňte prosím váš email</span>
                     </div>
                   </div>
                   <div class="form-row">
@@ -708,6 +710,7 @@
                         maxlength="9"
                         class="form-control"
                       />
+                      <span class="form-error">Vypňte prosím váš telefon ve správném formátu</span>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="service-type">Typ služby</label>
@@ -720,6 +723,7 @@
                         <option value="Web">Web</option>
                         <option value="Aplikace">Aplikace</option>
                       </select>
+                      <span class="form-error">Vyberte prosím typ služby</span>
                     </div>
                   </div>
                   <div class="form-group">
@@ -730,6 +734,7 @@
                       id="message"
                       rows="5"
                     ></textarea>
+                    <span class="form-error">Vyplňte prosím vaši zprávu</span>
                   </div>
                   <button type="submit" class="btn-submit">
                     Odeslat <i class="fas fa-paper-plane"></i>
