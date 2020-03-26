@@ -290,6 +290,15 @@ textarea.form-control.invalid {
   font-size: 2rem;
 }
 
+.final-state {
+  margin-top: 1rem;
+  color: #0dd00d;
+}
+
+.final-state.error {
+  color: red;
+}
+
 .hobby {
   font-size: 1.05rem;
   margin-top: 2rem;
