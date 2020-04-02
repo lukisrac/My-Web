@@ -1,0 +1,50 @@
+{
+  "name": "mujweb",
+  "version": "1.1.0",
+  "description": "Můj osobní web, předělaný pomocí Parcel JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "prebuild": "rimraf dist",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klobasus/My-Web.git"
+  },
+  "keywords": [
+    "můj",
+    "web",
+    "osobní"
+  ],
+  "author": "Lukáš Rác",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klobasus/My-Web/issues"
+  },
+  "homepage": "https://github.com/klobasus/My-Web#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-custom-dist-structure": "^1.1.2",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      ".js.map": "js",
+      ".css": "css",
+      ".css.map": "css",
+      "images": [
+        ".jpg",
+        ".png"
+      ],
+      ".fileExtension": "folder/in/dist",
+      "folder/in/dist": [
+        ".file",
+        ".extensions"
+      ]
+    }
+  }
+}
