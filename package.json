@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "prebuild": "rimraf dist",
-    "build": "parcel build src/index.html --public-url ./"
+    "build": "parcel build src/index.html --out-file index.php src/contact.php --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,8 @@
       ".css.map": "css",
       "images": [
         ".jpg",
-        ".png"
+        ".png",
+        ".ico"
       ],
       ".fileExtension": "folder/in/dist",
       "folder/in/dist": [
