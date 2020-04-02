@@ -1,0 +1,17 @@
+// COLORS
+$primary: #e63254;
+$default-font-color: #161c2d;
+$text-muted: #707070;
+$light-grey: #f8f9fa;
+$grey: #6c757d;
+$border-grey: #495057;
+$divider-grey: #e9ecef;
+
+// BREAKPOINTS
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;

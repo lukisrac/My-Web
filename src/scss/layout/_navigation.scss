@@ -1,0 +1,143 @@
+.navbar {
+  padding: 1.3rem 0;
+  width: 100%;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease;
+  @include media-breakpoint-down(md) {
+    background: #fff;
+    padding: 0.9rem 0;
+    transition: none;
+  }
+
+  &-brand {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    @include media-breakpoint-down(md) {
+      color: $default-font-color;
+    }
+  }
+  &-collapse {
+    //display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      overflow: visible;
+      max-height: unset;
+    }
+  }
+  &-toggler {
+    color: $default-font-color;
+    font-size: 30px;
+    padding: 0;
+    cursor: pointer;
+    line-height: 1;
+    background: transparent;
+    border: 0;
+    outline: none;
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0 auto;
+  }
+  &__link {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    transition: all 0.5s;
+
+    &:hover,
+    &.active {
+      color: $primary;
+    }
+  }
+  .social-icons {
+    margin: 0;
+
+    .navbar__link {
+      padding: 0;
+      font-size: 0.9rem;
+      border: 1px solid #fff;
+      border-radius: 0.25rem;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        color: #fff;
+        background: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+
+  &.sticky {
+    background: #fff;
+    padding: 0.9rem 0;
+    box-shadow: 0 10px 33px rgba(0, 0, 0, 0.1);
+
+    .navbar-brand,
+    .navbar__link:not(.active) {
+      color: $default-font-color;
+    }
+    .navbar__link:hover {
+      color: $primary;
+    }
+    .social-icons .navbar__link {
+      border-color: $default-font-color;
+
+      &:hover {
+        color: #fff;
+        border-color: $primary;
+      }
+    }
+  }
+}
+.navbar-collapse.active {
+  //display: block;
+  flex-basis: 100%;
+  padding-top: 0.5rem;
+  max-height: unset;
+
+  .navbar__list {
+    flex-direction: column;
+  }
+  .navbar__link {
+    color: $default-font-color;
+    padding: 0.5rem;
+    display: block;
+    line-height: 24px;
+  }
+  .social-icons {
+    flex-direction: row;
+    margin: 0.5rem;
+
+    .navbar__link {
+      display: flex;
+      border-color: $default-font-color;
+      padding: 0;
+    }
+  }
+}

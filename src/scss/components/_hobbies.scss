@@ -1,0 +1,54 @@
+.hobby {
+  font-size: 1.05rem;
+  margin-top: 2rem;
+
+  &__inner {
+    padding: 0.5rem;
+    background: $light-grey;
+    display: flex;
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+    align-items: center;
+    position: relative;
+    transition: all 0.5s ease;
+
+    &::before {
+      content: '';
+      background: $divider-grey;
+      width: 2px;
+      height: 58px;
+      position: absolute;
+      left: 55px;
+    }
+  }
+  &__icon {
+    flex-basis: 20%;
+    padding: 0.5rem;
+    transition: all 0.5s ease;
+    @include media-breakpoint-down(xs) {
+      flex-basis: 40px;
+    }
+  }
+  &__title {
+    flex-basis: auto;
+    text-align: left;
+    padding-left: 1rem;
+    @include media-breakpoint-down(md) {
+      padding-left: 2rem;
+    }
+
+    h4 {
+      font-weight: 500;
+    }
+  }
+  &__inner:hover {
+    transform: translateY(-5px);
+    border-color: $divider-grey;
+    background: #fff;
+    box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
+
+    .hobby__icon {
+      color: $primary;
+    }
+  }
+}

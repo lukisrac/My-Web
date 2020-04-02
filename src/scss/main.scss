@@ -1,3 +1,18 @@
-body {
-  display: none;
-}
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/placeholders';
+
+@import 'base/base';
+@import 'base/grid';
+
+@import 'components/buttons';
+@import 'components/contact-form';
+@import 'components/hobbies';
+@import 'components/modal';
+@import 'components/projects';
+@import 'components/skills';
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/sections';
