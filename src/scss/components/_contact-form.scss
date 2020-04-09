@@ -128,9 +128,18 @@ textarea.form-control.invalid {
 }
 .final-state {
   margin-top: 1rem;
-  color: #0dd00d;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #4caf50;
+  color: #fff;
+  display: flex;
+  align-items: center;
 
   &.error {
-    color: red;
+    background: #f44336;
+  }
+  span {
+    margin: 0 0.4rem 0 0.2rem;
+    font-size: 1.3rem;
   }
 }

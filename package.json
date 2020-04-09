@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "prebuild": "rimraf dist",
-    "build": "parcel build src/index.html --out-file index.php src/contact.php --public-url ./"
+    "build": "parcel build src/index.html --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -50,6 +50,7 @@
     }
   },
   "dependencies": {
+    "firebase": "^7.13.1",
     "isotope-layout": "^3.0.6",
     "smooth-scroll": "^16.1.3"
   }
