@@ -35,7 +35,7 @@ projectModal.init();
 getCurrentYear();
 
 // Form validation and submition
-const contactForm = document.getElementById('contact-form');
+/* const contactForm = document.getElementById('contact-form');
 const nameInput = contactForm.querySelector('#name');
 const emailInput = contactForm.querySelector('#email');
 const phoneInput = contactForm.querySelector('#phone');
@@ -158,4 +158,4 @@ contactForm.addEventListener('submit', (e) => {
       }
     });
   }
-});
+}); */
