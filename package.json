@@ -4,7 +4,7 @@
   "description": "Můj osobní web, předělaný pomocí Parcel JS",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html src/contact.php --open",
+    "start": "parcel src/index.html --open",
     "prebuild": "rimraf dist",
     "build": "parcel build src/index.html --out-file index.php src/contact.php --public-url ./"
   },
