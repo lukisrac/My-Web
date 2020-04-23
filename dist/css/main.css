@@ -158,33 +158,6 @@ textarea.form-control.invalid {
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.btn-submit {
-  display: block;
-  margin-left: auto;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1;
-  background: #e63254;
-  color: #fff;
-  border: 0;
-  border-radius: 0.25rem;
-  text-transform: uppercase;
-  margin-top: 2rem;
-  padding: 0.6rem 0.8rem;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.btn-submit:hover {
-  background: #161c2d;
-}
-
-.btn-submit i {
-  margin-left: 0.4rem;
-}
-
 .contact__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -292,11 +265,25 @@ textarea.form-control.invalid {
 
 .final-state {
   margin-top: 1rem;
-  color: #0dd00d;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #4caf50;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .final-state.error {
-  color: red;
+  background: #f44336;
+}
+
+.final-state span {
+  margin: 0 0.4rem 0 0.2rem;
+  font-size: 1.3rem;
 }
 
 .hobby {
