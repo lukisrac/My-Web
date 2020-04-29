@@ -1,19 +1,21 @@
 {
-  "name": "myweb",
-  "version": "1.0.0",
-  "description": "Můj osobní web",
+  "name": "mujweb",
+  "version": "1.1.0",
+  "description": "Můj osobní web, předělaný pomocí Parcel JS",
   "main": "index.js",
   "scripts": {
-    "build": "node_modules/.bin/webpack --mode production",
-    "serve": "webpack-dev-server --mode development"
+    "start": "parcel src/index.html --open",
+    "prebuild": "rimraf dist",
+    "build": "parcel build src/index.html --public-url ./"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/klobasus/My-Web.git"
   },
   "keywords": [
-    "osobní",
-    "web"
+    "můj",
+    "web",
+    "osobní"
   ],
   "author": "Lukáš Rác",
   "license": "ISC",
@@ -22,16 +24,34 @@
   },
   "homepage": "https://github.com/klobasus/My-Web#readme",
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-custom-dist-structure": "^1.1.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "sass": "^1.26.3"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      ".js.map": "js",
+      ".css": "css",
+      ".css.map": "css",
+      "images": [
+        ".jpg",
+        ".png",
+        ".ico"
+      ],
+      ".fileExtension": "folder/in/dist",
+      "folder/in/dist": [
+        ".file",
+        ".extensions"
+      ]
+    }
   },
   "dependencies": {
+    "firebase": "^7.13.1",
     "isotope-layout": "^3.0.6",
-    "smooth-scroll": "^16.1.0",
-    "webpack-dev-server": "^3.9.0"
+    "smooth-scroll": "^16.1.3"
   }
 }

@@ -48,7 +48,7 @@ let isValidName,
   isValidServiceType,
   isValidMessage = true;
 
-const validateEmail = email => {
+const validateEmail = (email) => {
   let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   return regex.test(email);
@@ -80,7 +80,7 @@ messageInput.addEventListener('blur', () => {
   }
 });
 
-contactForm.addEventListener('submit', e => {
+contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const formData = new FormData(contactForm);
@@ -141,21 +141,19 @@ contactForm.addEventListener('submit', e => {
     isValidServiceType &&
     isValidMessage
   ) {
-    fetch('../contact.php', {
+    fetch('./contact.php', {
       method: 'POST',
       body: formData,
-    }).then(response => {
+    }).then((response) => {
       const p = document.createElement('p');
       p.className = 'final-state';
       contactForm.append(p);
       if (response.ok) {
         contactForm.reset();
-        p.innerHTML =
-          'Děkuji za vyplnění formuláře &#128522;  Co nejdříve se vám ozvu.';
+        p.innerHTML = `<span>&#128522;</span> Děkuji za vyplnění formuláře. Co nejdříve se vám ozvu.`;
       } else {
         p.classList.add('error');
-        p.innerHTML =
-          'Formulář se nepodařilo odeslat &#128533; Nejspíš máte něco špatně vyplněného, zkuste to znovu';
+        p.innerHTML = `<span>&#128533;</span> Formulář se nepodařilo odeslat.<br> Nejspíš máte něco špatně vyplněného, zkuste to znovu.`;
         throw new Error('Něco se pokazilo!');
       }
     });
